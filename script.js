@@ -58,18 +58,18 @@ class Timer {
         `;
 
         div.querySelector(".startBtn").addEventListener("click", () => this.start());
-        div.querySelector(".pauseBtn").addEventListener("click", () => this.start());
-        div.querySelector(".resetBtn").addEventListener("click", () => this.start());
+        div.querySelector(".pauseBtn").addEventListener("click", () => this.pause());
+        div.querySelector(".resetBtn").addEventListener("click", () => this.reset());
 
         return div;
     }
 
     updateDisplay() {
-        const minutes = Math.floow(this.timeLeft / 60);
+        const minutes = Math.floor(this.timeLeft / 60);
         const seconds = this.timeLeft % 60;
         this.timeDisplay.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
         const progressPercent = ((this.duration - this.timeLeft) / this.duration) * 100;
-        this.progressstyle.width = `${progressPercent}%`;
+        this.progress.style.width = `${progressPercent}%`;
     }
 
     updateButtons(state) {
@@ -158,7 +158,7 @@ timers.forEach((timer, i) => {
 
 segments.forEach((segment, i) => {
     const timer = new Timer(segment, i);
-    timers.pust(timer);
+    timers.push(timer);
     track.appendChild(timer.element)
 })
 
