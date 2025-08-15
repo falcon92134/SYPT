@@ -94,7 +94,7 @@ class Timer {
                 show(this.pauseBtn);
                 show(this.resetBtn);
                 break;
-            case 'initial':
+            case 'complete':
                 hide(this.startBtn);
                 hide(this.pauseBtn);
                 show(this.resetBtn);
@@ -146,9 +146,8 @@ class Timer {
         this.isComplete = true;
         this.updateDisplay();
         this.updateButtons("complete");
-        this.element.classList.add("complete");
         alarm.currentTime = 0;
-        alarm.onplay().catch(() => { });
+        alarm.play().catch(() => { });
     }
 }
 

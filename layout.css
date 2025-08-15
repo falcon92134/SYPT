@@ -187,11 +187,6 @@ html {
     color: #999;
 }
 
-.timer-segment.complete {
-    border: 3px solid #FFD54F;
-    box-shadow: 0 0 20px 4px rgba(255, 213, 79, 0.5);
-}
-
 @media (max-width: 768px) {
     .carousel {
         flex-direction: column;
